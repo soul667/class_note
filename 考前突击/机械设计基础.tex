@@ -116,6 +116,39 @@
 \section{凸轮}
 基圆半径(理论廓线最小)
 
+凸轮的组成：从动件，凸轮，机架。
+
+设计：反转法
+
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+  \item[理论廓线] 滚子中心，下面其他的定义都是基于理论廓线开始的。
+  \item[偏置圆]
+  \item[基圆]
+  \item[推程] 从开始位置到最大位移位置
+  \item[回程] 从最远位置到底最小位移位置 
+  \item[压力角] 过廓线接触点 B 作法线 nn 与\textbf{从动件}的运动方向之间的夹角 α 就是其压力角 
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=5cm]{img/15.png}
+              \end{figure}    
+  \item[凸轮转角] 从初始位置，记得是做切线找。
+  \item[位移] 位移怎么找来着？？？？？ 
+  \item[最大位移]  
+\end{description}
+
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+左偏置可以减小压力角。
+}
+\end{quote}
+
+\subsection{不同的运动形式}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+  \item[等速运动
+  ]  刚性冲击
+  \item[简谐运动] 柔性冲击，中低速。
+  \item[正弦加速] 无突变，高速凸轮。 
+\end{description}
 \section{齿轮结构，轮系和齿轮传动}
 本章节主要考点为齿轮机构的特点和类型，啮合基本定理，渐开线轮廓，部分名称和基本尺寸。渐开线尺寸的啮合和切齿原理，
 定轴轮系传动笔计算和齿轮传动的失效形式，设计准则。强度？？
@@ -325,17 +358,78 @@ c&=c*m
 闭式齿轮与开式齿轮的党见失效形式分别是什么?
 \section{一些小题简答题}
 \subsection{常见轴承类型(367N)及其受力特点，滚动轴承寿命计算}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+按照受力分向心轴承和推力轴承。
+}
+\end{quote}
 \begin{description}[leftmargin=2.8cm,style=nextline,nosep]% nosep没有垂直间隔
   \item[3 圆锥滚子轴承] 能同时承受较大的径向载荷和轴向载荷
   \item[6 深沟球轴承] 主要承受径向载荷,同时也可承受一定量的轴向载荷
   \item[7 角接触球轴承] 能同时承受径向、轴向\textbf{联合}载荷（高速支点？）
   \item[N 圆柱滚子轴承]  能承受较大的径向载荷,不能承受轴向载荷
+  \item[5 推力球轴承] 
+  \item[NA 滚针轴承] 
 \end{description}
 \begin{quote}
 {\qquad\parindent2\ccwd\kaishu\zihao{5}
 367N，追狗叫住
 }
 \end{quote}
+\subsection{寿命}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+  \item[轴承寿命] 轴承任一元件出现疲劳点蚀之前的总转数$(10^6r)$或者总工作小时$(h)$。
+  \item[基本额定寿命 $L_{10}$]  一批相同轴承，其中百分之九十不出现疲劳点蚀之前的总转数$(10^6r)$或者总工作小时$(h)$。
+   \item[基本额定动载荷] 轴承在基本额定寿命时所能承受的最大载荷。
+   \item[当量动载荷]  对于向心轴承，C 为径向载荷Cr。对于推力轴承，C 为轴向载荷Ca。也有可能都承受。
+\end{description}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/9.png}
+            \end{figure}
+$L_{10}$是多少转，$L_{h}$是多少小时。还可以引入温度系数$f_t$和动载荷系数$f_p$
+$$ L_{h}= \frac{10^{6}}{60n}(\frac{f_{t}C}{f_{P}P})^{\varepsilon} $$
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+只有3，N是滚子轴承是$\displaystyle \frac{10}{3}$
+}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/10.png}
+
+            \includegraphics[width=8cm]{img/11.png}
+          \end{figure}
+\end{quote}
+
+我们需要重点掌握的是如下的\textcolor{red}{\textbf{角接触向心轴承的实际轴向载荷}}！！！
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=7cm]{img/12.png}
+            \end{figure}
+小内正，大外反。或者箭头就是从交出的箭头方向。
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=5cm]{img/14.png}
+            \end{figure}
+先判断哪端压紧。放松端轴承的轴向载荷 = 内部轴向力，压紧端轴承的轴向载荷 = 除去本身内部轴向力后其余轴向
+力的\textcolor{red}{\textbf{代数和}}(注意这个实时$F_1'$ 并不是$F_a$，，，)。并且有
+$$
+e=\frac{F_1'}{F_{r_1}}
+$$
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+记得给出谁是危险轴承(2分)，P大的那个之危险轴承。
+}
+\end{quote}
+\begin{figure}[H]
+            \centering
+            \includegraphics[width=8.5cm]{img/13.png}
+            \end{figure}
+            \begin{quote}
+            {\qquad\parindent2\ccwd\kaishu\zihao{5}
+            上面这个图是得出P的。
+            }
+            \end{quote}
 \section{间歇运动机构}
 \section{连接}
 \subsection{螺纹连接}
@@ -401,4 +495,104 @@ $F_0$是预紧力，是最小轴向拉力。
 }
 \end{quote}
 \section{带传动}
+\subsection{带传动的基本理论}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=7cm]{img/16.png}
+            \end{figure}
+基准长度
+$$ L_{d}=2a+ \frac{\pi(d_{2}+d_{1})}{2}+ \frac{(d_{2}-d_{1})^{2}}{4a} $$
+
+绕进主动轮的是紧边，绕出主动轮的是松边。紧边拉力$F_1$，松边$F_2$
+\begin{align*}
+F_1-F_0&=F_0-F_2\\
+F_0&=\frac{1}{2}(F_1+F_2)\\
+F_f&=F_1-F_2\\
+F_1&=F_0+\frac{F_f}{2}\\
+F_2&=F_0-\frac{F_f}{2}\\
+P&=\frac{FV}{1000}
+\end{align*}
+
+$F_f>F_{\max}$ 的时候就打滑。在其刚要打滑的时候，有
+$$
+\frac{F_1}{F_2}=e^{f\alpha}
+$$
+带速
+$$ v= \frac{\pi d_{1}n_{1}}{60 \times 1000}m/s $$
+
+小带轮包角
+$$  \alpha _{1}\approx 180^{\circ}- \frac{d_{d2}-d_{d1}}{a}\times 57.3^{\circ} $$
+联立可以求解得到
+$$\left\{ \begin{matrix}  F_{1}=F \frac{e^{f \alpha}}{e^{f_{\alpha}}-1}  \\  F_{2}=F \frac{1}{e^{f_{\alpha}}-1}  \\  F=F_{1}-F_{2}=F_{1}(1- \frac{1}{e^{f_{\alpha}}})  \end{matrix} \right.$$
+
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+增大包角，初拉力，摩擦力，都可以提高其所能传递的有效圆周力。
+}
+\end{quote}
+
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+  \item[弹性滑动] 弹性滑动不可避免。其是因带的弹性变化导致的带和带轮之间的相对运动。
+  \item[打滑] 打滑可以避免，先发生在\textbf{小带轮}处  
+\end{description}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/17.png}
+            \end{figure}
+避免打滑，可将带轮上与带接触的表面加工得粗糙些以增大摩擦（对）
+
+
+在V带传动设计中，限制带得根数是为了使每根带受力不致太大。（对）
+
+
+V带在减速传动过程中，带的最大应力应在\textbf{V带小带轮处}。（对）
+带传动的中心距过小会使得带的寿命降低。（对）使得包角（\textbf{变小}）
+
+V带传动的弹性滑动可避免。（错）
+
+减小V带传动的小带轮包角会降低带的工作能力（）
+在V带传动中，能提高传递得最大有效圆周力得影响因素有哪些？（包角，摩擦系数，初拉力）
+（四种即可）
+\section{连接}
+
+\subsection{题目}
+\paragraph{常用螺纹连接的类型有哪些？}
+螺栓，螺钉，双头螺柱。
+\paragraph{普通螺纹连接、双头螺柱连接和螺钉连接的应用场合分别是什么？}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=7cm]{img/18.png}
+            \end{figure}
+\paragraph{半圆键的工艺性好，装拆方便。}（对对）
+\paragraph{平键与半圆键都是靠键的两侧面来传递载荷。}（对）
+\paragraph{平键连接能传递的最大扭矩为T,现要传递扭矩为1.5T,不改变键所在轴的直径和轮毂长度，则应安装一对平键。（对）}
+\paragraph{键连接的四种主要类型？} 平键连接，半圆键连接，楔键连接，切向键连接。
+\paragraph{根据用途不同，说出四种平键连接中的两种？}普通平键，导向平键。
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+承载能力不够时采用，按180°布置两个键。一对平键按1.5个键计算
+}
+\end{quote}
+\section{轴}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+按照\textbf{负载情况}来分，有转轴，心轴，传动轴。
+\textbf{心弯，传转，转都行。}
+}
+\end{quote}
+\subsection{轴的设计}
+定位，固定。
+\subsubsection{轴的组成}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=7cm]{img/19.png}
+            \end{figure}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+  \item[轴头] 和旋转零件配合部分
+  \item[轴身] 和轴承配合部分
+  \item[轴颈] 连接轴头和轴身
+  \item[轴肩]  轴的直径变
+  化所形成的阶梯处
+\end{description}
+\section{联轴器和离轴器}
 \end{document}
