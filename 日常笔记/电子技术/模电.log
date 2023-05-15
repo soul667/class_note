@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.4.24)  12 MAY 2023 16:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.5.12)  12 MAY 2023 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1098,13 +1098,12 @@ Library (tcolorbox): 'tcbtheorems.code.tex' version '5.0.2'
 LaTeX Font Info:    Trying to load font information for T1+txr on input line 100.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
-)
-No file 模电.aux.
+) (./模电.aux)
 \openout1 = `模电.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 100.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 100.
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 100.
@@ -1199,16 +1198,13 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 100.
 LaTeX Info: Redefining \pageref on input line 100.
 LaTeX Info: Redefining \nameref on input line 100.
+ (./模电.out) (./模电.out)
 \@outlinefile=\write5
 \openout5 = `模电.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 \c@lstlisting=\count408
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 104.
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 104.
@@ -1253,10 +1249,16 @@ Package fontspec Info: Font family 'FandolHei-Regular(0)' created for font
 (fontspec)             <->"[FandolHei-Bold.otf]/OT:language=dflt;"
 (fontspec)             -  (b/fscn) with NFSS spec.: 
 
+(./模电.toc
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10.53937> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 2.
+)
 \tf@toc=\write6
 \openout6 = `模电.toc'.
 
-[1
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <12.045> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 120.
+ [1
 
 
 ] (./模电.aux)
@@ -1266,15 +1268,15 @@ Package rerunfilecheck Warning: File `模电.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `模电.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  EF99564194F02F95C36FEA6E7C504BA0;91.
+(rerunfilecheck)             Before: 7EF75569E96F830EBBD576B9F36D877D;92
+(rerunfilecheck)             After:  60085A11747D7EE7EF3E2C7E226956A0;311.
  ) 
 Here is how much of TeX's memory you used:
- 36389 strings out of 476191
- 769334 string characters out of 5812072
- 1089236 words of memory out of 5000000
- 56494 multiletter control sequences out of 15000+600000
- 495586 words of font info for 92 fonts, out of 8000000 for 9000
+ 36444 strings out of 476191
+ 772414 string characters out of 5812072
+ 1092396 words of memory out of 5000000
+ 56538 multiletter control sequences out of 15000+600000
+ 499008 words of font info for 97 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,8n,97p,1195b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
 
