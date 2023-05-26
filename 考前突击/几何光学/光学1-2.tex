@@ -1,0 +1,488 @@
+
+\section{球面和球面系统}
+虚实像物点，物像空间。
+\subsection{概念和符号系统}
+\subsubsection{完善成像条件}
+\begin{enumerate}[nosep]% nosep表示没有垂直间隔
+    \item 同心光束成同心光束
+    \item 球面波成球面波
+    \item 物点像点之间等光程
+\end{enumerate}
+\subsubsection{一些成像中的概念}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[同心光束] 从同一点发出的或\textbf{汇聚到同一点}的光线束。
+    \item[光具组] 若干反射折射面组成的光学系统
+    \item[虚实像物点] 同一点发出的为\textbf{实}点，汇聚到同一点的为\textbf{虚}点。在\textbf{像/物}方的为\textbf{像/物}点。叠加得到实物点，虚像点等。
+    \item[像物方空间] 物点所在的空间为\textbf{物方空间}，像点所在的空间为\textbf{像方空间}
+    \item[完善像点]
+\end{description}
+\subsubsection{一些规定的概念}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[子午平面] 包含光轴的平面
+    \item[截距] 物方或像方光线与光轴交点到顶点的距离。
+    \item[倾斜角] 物方或像方光线与光轴的夹角。
+\end{description}
+\subsubsection{约定的符号}
+为了表示各种线段量和角度量的属性，我们约定俗成地规定了一些符号。
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[传播方向] 物方到像方，并且定义此方向单位向量$\vec{n}$
+    \item[沿轴线段] 从折射球面顶点出发到终点，向量为$\vec{r}$,定义其向量为$\vec{r}\cdot \vec{n}$
+    \item[垂轴线段] 光轴上正，下负
+    \item[间隔$d$] 多球面，从第一个球面到第二个球面，同沿轴线段。
+    \item[角度] 从光轴到光线到法线，锐角转向，顺正逆负。
+    \item[球面半径] 以球面和主光轴的交点为准到球心做向量$\vec{r}$,$r=\vec{r}\cdot \vec{n}$
+\end{description}
+接着给出一些常用的符号，$l,l',n,n',u,u'$
+\subsection{基本公式推导(折射)}
+我们需要根据入射光线给出的条件$r,n,n',L,U$,求出$L',U'$
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{img/1.1.png}
+\end{figure}
+根据折射定律得
+\begin{equation}
+    n \sin I =n' \sin I '\tag{1.2.1.a}
+\end{equation}
+在$\Delta EAC$ 中运用正弦定理，得到
+\begin{equation}
+    \frac{\sin I }{r-L}=\frac{\sin -U}{r}\tag{1.2.2.a}
+\end{equation}
+显然又因为内外角定理，可得
+\begin{equation}
+    \varphi=U+I=U'+I' \tag{1.2.3.a}
+\end{equation}
+在$\Delta ACE$ 中再使用正弦定理，可得
+\begin{equation}
+    L'=r+\frac{r}{\sin U'} \sin I' \tag{1.2.4.a}
+\end{equation}
+显然固定$L,r,n,n'$，动$U$，显然$L'$会发生改变，即不是同心光束，
+不能\textbf{完善成像}。
+\subsubsection{近轴光路近似}
+
+\begin{description}[leftmargin=1cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[近轴（傍轴）光线] 与光轴很靠近的光线，即-U很小，此时\textbf{用小写
+            （如-u等）}表示近轴光线的参数。
+\end{description}
+此时可利用小角近似，$i=\sin i= \tan i$,所以(1.2.1.a-1.2.4.a)可以写成
+\begin{align}
+    n i =n' i '\tag{1.2.1.b}                 \\
+    \frac{i }{r-l}=\frac{-u}{r}\tag{1.2.2.b} \\
+    \varphi=u+i=u'+i' \tag{1.2.3.b}          \\
+    l'=r+\frac{r}{ u'}  i' \tag{1.2.4.b}
+\end{align}
+化简(1.2.4.b)
+\begin{equation}
+    \begin{aligned}
+        l'=r+r \frac{i'}{u'} & =r+r \frac{i'}{u+i-i'}                       \\
+                             & =r+r \frac{\frac{n}{n'}i}{u+i-\frac{n}{n'}i} \\
+                             & =r+r \frac{n}{\frac{n'u}{i}+n'-n}
+    \end{aligned}
+    \tag{1.2.5}
+\end{equation}
+先算$i$
+\begin{equation}
+    i= \frac{u(l-r)}{r}\tag{1.2.6}
+\end{equation}
+(1.2.6) 代入(1.2.5)
+\begin{equation}
+    l'=r+r \frac{n}{\frac{n'r}{l-r}+n'-n}\tag{1.2.7}
+\end{equation}
+显然$l'$与$u$无关,其\textbf{完善成像}。此时的像物点又叫做\textbf{共轭点}。
+近轴光所成像称为\textbf{高斯像}，
+仅考虑近轴光的光学叫\textbf{高斯光学}。
+\subsubsection{近轴光路其他公式}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{img/1.2.png}
+\end{figure}
+我们新引入了一个$h$，先来引入几个关于它的式子
+\begin{align}
+    h       & =lu=l'u' \tag{1.2.8}                               \\
+    \varphi & \thickapprox \tan \varphi= \frac{h}{r} \tag{1.2.9}
+\end{align}
+Then Let,s start our solve
+\begin{description}[leftmargin=0.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[折射球面的物像位置关系]
+        由(1.2.8)得，\begin{equation}
+            u=\frac{h}{l} \quad u'=\frac{h}{l'} \tag{1.2.10}
+        \end{equation}
+        化简(1.2.1.b)得{1.2.11.a},其移项化简可得后一项
+        \begin{align}
+            n(\varphi-u)=n'(\varphi-u') \tag{1.2.11.a} \\
+            n u-n' u'=(n-n')\varphi =(n-n')\frac{h}{r} \tag{1.2.11.b}
+        \end{align}
+        将(1.2.10)代入(1.2.11.b)，可得
+        \begin{equation}
+            \frac{h}{l}n-\frac{h}{l'}n'=(n-n')\frac{h}{r}\tag{1.2.12.bef}\footnote{bef表示该公式的前置证明步骤公式}。
+        \end{equation}
+        \begin{equation}
+            \frac{n}{l}-\frac{n'}{l'}=\frac{n-n'}{r}\tag{1.2.12}
+        \end{equation}
+        此式即为\textbf{折射球面的物像位置关系},同时,此式也可由式(1.2.7)直接化简而来.下面简要说明
+        \begin{equation}
+            \begin{aligned}
+                l'&=r+r(\frac{n}{\frac{n'r}{l-r}+n'-n})\\
+                &=r(1+\frac{nl-nr}{n'r+(n'-n)(l-r)})\\
+                &=r(1+\frac{nl-nr}{n'l-nl+nr})\\
+                &=r(\frac{n'l}{n'l-nl+nr})
+               \end{aligned} \tag{1.2.12.af1}
+        \end{equation}
+        继续化简
+        \begin{align}
+         rn'l=(n'&-n)ll'+rnl' \tag{1.2.12.af 2} \\
+         r(n'l-nl')&=(n'-n)ll' \tag{1.2.12.af 3}\\
+         \frac{n'}{l'}-\frac{n}{l}&=\frac{n'-n}{r} \tag{1.2.12.af 4}   
+        \end{align}
+        \item[阿贝不变量]
+        化简(1.2.11.a)
+        \begin{align}
+            n(\frac{h}{r}-\frac{h}{l})=n'(\frac{h}{r}-\frac{h}{l'}) \tag{1.2.13.bef} \\
+            n(\frac{1}{r}-\frac{1}{l})=n'(\frac{1}{r}-\frac{1}{l'}) =Q \tag{1.2.13}
+        \end{align}
+        式(1.2.13)即为\textbf{阿贝不变量}公式。
+    \item[光焦度]
+        表示折射面偏折光纤的能力
+        \begin{equation}
+            \Phi=\frac{n'-n}{r}\tag{1.2.14}
+        \end{equation}
+    \item[焦距]
+        \begin{align}
+            \frac{1}{f}=\frac{1}{l_{l' \to \infty}} & =\frac{n-n'}{nr} \tag{1.2.15.a}   \\
+            \frac{1}{f}=\frac{1}{l'_{l \to \infty}} & =-\frac{n-n'}{n'r} \tag{1.2.15.b}
+        \end{align}
+        用光焦度表示的焦距
+        \begin{equation}
+            \frac{1}{f}= -\frac{1}{n} \Phi\hspace{0.5cm}  \frac{1}{f'}=\frac{1}{n'}\Phi\tag{1.2.16}
+        \end{equation}
+        化简上述公式可得
+        \begin{equation}
+            \frac{f'}{f}=-\frac{n'}{n}\tag{1.2.17}
+        \end{equation}
+        $\displaystyle \frac{1}{(1.2.15.a)}+\frac{1}{(1.2.15.b)}$可得
+        \begin{equation}
+            f+f'=r\tag{1.2.18}
+        \end{equation}
+    \item[屈光度]
+        光焦度的单位称为\textbf{屈光度}，以字母D表示（对应焦距单位：米）
+        \begin{enumerate}[nosep]% nosep表示没有垂直间隔
+            \item  200度近视镜光焦度-2.00D（凹透镜）\textcolor{red}{\textbf{负透镜}}
+            \item 300度老花镜光焦度3.00D（凸透镜）\textcolor{red}{\textbf{正透镜}}
+        \end{enumerate}
+    \item[高斯公式]
+        将(1.2.15.a),(1.2.15.b)代入式(1.2.12)得
+        \begin{equation}
+            \frac{n-n'}{r}=\frac{(n-n')f}{rl}+\frac{(n-n')f'}{rl'}  \tag{1.2.19.bre1}
+        \end{equation}
+        显然可得
+        \begin{equation}
+            \frac{f}{l}+\frac{f'}{l'}=1 \tag{1.2.19}
+        \end{equation}
+        式(1.2.19)即为\textbf{高斯公式}。
+
+    % \item[牛顿公式]
+    % \item[]
+\end{description}
+\subsubsection{三种放大率和拉氏不变量}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/1.3.png}
+            \end{figure}
+上图中存在错误,我们将图中的$-l$ 记作$l$,$-y'$ 记作$y'$ 注意其均\textbf{带有正负}.
+\begin{description}[leftmargin=0.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[横向放大率] 
+     \begin{equation}
+     \beta=\frac{y'}{y}=\frac{l'i'}{li}\tag{1.2.20}
+     \end{equation}
+     又因为有
+\begin{align}
+    ni=ni' \quad lu=l'u' \tag{1.2.21.bre 1}\\
+        nlui=n'l'u'i'  \tag{1.2.21.bre 2}
+\end{align}
+所以可得
+\begin{equation}
+\beta=\frac{nu}{n'u'}=\frac{nl'}{n'l} \tag{1.2.21}
+\end{equation}
+    \item[横向(垂轴)放大率] 
+    \begin{equation}
+    \alpha=\frac{\mathrm{d}{ l'}}{\mathrm{d}{l}}
+    \end{equation}
+    \item[轴向放大率] (1.2.12)两端分别对$u$进行求导,r对u是常数,所以有
+    \begin{align}
+      \frac{n'}{l'^2}\frac{\mathrm{d}{l'}}{\mathrm{d}{u}}-\frac{n}{l^2}\frac{\mathrm{d}{l}}{\mathrm{d}{u}}=0 \tag{1.2.22.bef 1}\\ 
+      \frac{n'}{l'^2}\frac{\mathrm{d}{l'}}{1}=\frac{n}{l^2}\frac{\mathrm{d}{l}}{1}\tag{1.2.22.bef 1}
+    \end{align}
+    所以求得
+    \begin{equation}
+    \frac{\mathrm{d}{l'}}{\mathrm{d}{l}}=\frac{nl'^2}{n'l^2}=\frac{\beta^2}{\frac{n}{n'}} \tag{1.2.22}
+    \end{equation}
+    \item[角放大率]
+    \begin{equation}
+    \gamma=\frac{u'}{u}=\frac{l}{l'}=\frac{1}{\beta}\frac{n}{n'} \tag{1.2.23}
+    \end{equation} 
+\end{description}
+显然以上三种放大率$\alpha \hspace{0.2cm}  \beta\hspace{0.2cm}   \gamma$之间存在关系,
+\begin{equation}
+\frac{\alpha \gamma}{\beta}=1\tag{1.2.24}
+\end{equation}
+\begin{description}[leftmargin=0.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[拉式不变量] 同时根据$\beta$我们定义一个叫做拉式不变量的概念
+    \begin{align}
+    \frac{y'}{y}=\beta=\frac{nu}{n'u'}    \tag{1.2.25.bef 1}\\
+      nuy=n'u'y'=j  \tag{1.2.25}
+    \end{align}
+    j为拉氏不变量，它是表征光学系统性能的重要参数
+
+    $\beta>0$ 成\textbf{虚实相同的正像}. 
+    
+    $\beta<0$ 成\textbf{虚实相反的倒像}
+\end{description}
+
+\subsection{反射球面}\
+其实就是将$n+n'=0$代入上述所有基本公式进行化简,下面给出部分常用公式
+\begin{align}
+\Phi&=\frac{-2n}{r}=\frac{2n'}{r} \tag{1.2.26} \\
+f&=f'=\frac{r}{2} \tag{1.2.27} \\
+&\frac{1}{l}+\frac{1}{l'}=\frac{2}{r} \tag{1.2.28}
+\end{align}
+\subsection{共轴球面系统}
+\subsection{透镜}
+\section{薄透镜理想光学系统}
+\subsection{共轴球面系统}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/1.4.png}
+            \end{figure}
+\begin{equation}
+\beta_n=\frac{y_n'}{y_1}=\prod_{i=1}^n \beta_i \tag{2.1.1}
+\end{equation}
+并且有拉式不变量$nyu$不变,同时上一个的像距是下一个的的物距(只要光线不改变方向)。
+\subsection{薄透镜}
+\begin{description}[leftmargin=0.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[薄透镜] 透镜厚度d 远小于物距、像距、焦距、曲率半径等 
+    \item[分类]         \begin{figure}[H]
+                \centering
+                \includegraphics[width=8cm]{img/1.5.png}
+                \end{figure}
+\end{description}
+\subsubsection{成像}        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/1.7.png}
+            \end{figure}
+\begin{align}
+    \frac{n_0}{l_1'}-\frac{n}{l_1}=\frac{n_0-n}{r_1} \tag{2.2.1.a}\\
+    \frac{n'}{l_2'}-\frac{n_0}{l_2}=\frac{n'-n_0}{r_2} \tag{2.2.1.b}
+\end{align}
+并且
+\begin{equation}
+l_2=l_1'+d \thickapprox  l_1' \tag{2.2.2}
+\end{equation}
+(2.2.1.a)+(2.2.1.b)
+\begin{align}
+    \frac{n'}{l_2'}-\frac{n}{l_1}=\frac{n_0-n}{r_1}+\frac{n'-n_0}{r_2}\tag{2.2.3.a}\\
+    \frac{n'}{l'}-\frac{n}{l_1}=\frac{n_0-n}{r_1}+\frac{n'-n_0}{r_2}\tag{2.2.3.b}
+\end{align}
+(2.2.3.b) 就是\textbf{薄透镜傍轴成像的物像距公式}。化简一下
+\begin{equation}
+    n(\frac{1}{r_1}-\frac{1}{l})-n'(\frac{1}{r_2}-\frac{1}{l'})=n_0(\frac{1}{r_1}-\frac{1}{r_2}) \tag{2.2.4}
+\end{equation}
+设(2.2.3.b)等式右边为$\Phi$，可得
+\begin{align}
+\text{物方焦距}f=\lim_{l' \to \infty}\frac{-n}{\Phi} \tag{2.2.5.a}\\
+\text{像方焦距}f'=\lim_{l \to \infty}\frac{n'}{\Phi} \tag{2.2.5.b}\\
+f=-f'=\frac{n}{\Phi} \tag{2.2.5.c}
+\end{align}
+$f'>0$汇聚$<0$发散。联立以上各方程组，可得其牛顿公式和高斯公式基本不变
+\begin{align}
+    \text{高斯公式}\frac{f'}{l'}+\frac{f}{l}=1 \tag{2.2.6.a}\\
+    \text{牛顿公式}xx'=ff' \tag{2.2.6.b}
+\end{align}
+
+并且如果在空气中$n=n'=1$,可得
+\begin{align}
+f'=-f=\frac{1}{\Phi} \tag{2.2.7.a}\\
+\Phi=(n_0-1)(\frac{1}{r_1}-\frac{1}{r_2}) \tag{2.2.7.b}
+\end{align}
+$\displaystyle \Phi>0,\frac{1}{r_1}-\frac{1}{r_2}>0$ 凸透镜，反之凹透镜。(其实只考虑两种最极端的情况就行)
+对于放大率来说，
+\begin{align}
+ \beta_1=\frac{n_1l_1'}{n_1'l_1} \tag{2.2.8.a}\\
+ \beta_2=\frac{n_2l_2'}{n_2'l_2} \tag{2.2.8.b}\\
+ \beta=\beta_1 \beta_2=\frac{n_1n_2l_1'l_2'}{n_1'n_2'l_1l_2} \tag{2.2.8.c}\\
+ l_1'=l_2,l_1=l,l_2'=l'\tag{2.2.8.d}\\
+ n_1=n,n_2'=n',n_1'=n_2=n_0\tag{2.2.8.e}
+\end{align}
+联立以上五式可得
+\begin{equation}
+\beta=\frac{nl'}{n'l}=-\frac{fl'}{f'l} \tag{2.2.9}
+\end{equation}
+注意上式中$f,f'$的顺序
+$$
+fn'+f'n=0
+$$
+下面再来看几个放大率，一样的分析方法（略去一点推导）
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/1.8.png}
+            \end{figure}
+            \begin{align}
+                -\frac{y'}{y}=\frac{f}{x}=\frac{x'}{f'} \tag{2.2.10.a}\\
+                \beta=\frac{y'}{y}=-\frac{f}{x}=-\frac{x'}{f'} \tag{2.2.10.b}
+            \end{align}
+            然后一如既往的
+            \begin{align}
+                \alpha=\frac{n'}{n}\beta^2 \tag{2.2.11.a}\\
+                \gamma=\frac{n}{n'}\frac{1}{\beta}\tag{2.2.11.b}\\
+                \alpha \gamma=\beta \tag{2.2.11.c}
+            \end{align}
+\textcolor{red}{\textbf{注意算透镜的时候，多用焦距，这样十分简单。}}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/1.9.png}
+            \includegraphics[width=8cm]{img/1.10.png}
+
+            \end{figure}
+\subsection{理想光学系统}
+单个折射球面或者是单薄透镜是对细小平面以细光束成完善像，但是实际的光学系统
+需要对一定大小的场以宽光束成像，其\textbf{成像有缺陷}。所以其必须要由若干元件组成，经过反复计算，使其成像\textbf{趋于}完善。
+
+并且对于理想光学系统，所成的像是完全相似的。这种理想光学系统理论，也被称作\textbf{高斯光学}。并且引出共轭的表示
+\begin{align}
+    \text{点} \to \text{共轭点} \tag{3.0.a}\\
+    \text{线} \to \text{共轭线} \tag{3.0.b}\\
+    \text{面} \to \text{共轭面} \tag{3.0.c}\\
+    \text{同心光束} \to \text{共轭同心光束} \tag{3.0.d}
+\end{align}
+\subsubsection{焦点和焦面}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/1.11.png}
+            \end{figure}
+    \begin{align}
+        A \to F' \tag{2.3.1.a} \\
+        F \to A' \tag{2.3.1.b} 
+    \end{align}
+    物方无穷远垂轴平面的共轭平面为通过 F’的垂轴平面（后焦平面，像方焦面）,像方无穷远垂轴平面的共轭平面为物方过 F 的垂轴平面（前焦平面，物方焦面）。
+    \subsubsection{主点$H,H'$和主平面}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=8cm]{img/3.1.png}
+                \end{figure} 
+如图所示找到$Q,Q',H,H'$
+\begin{align}
+    Q \to Q' \tag{2.3.2.a}\\
+    H \to H' \tag{2.3.2.b}\\
+    QH \to QH' \quad (\beta=1) \tag{3.2.c}
+\end{align}
+这个H就叫做主点，其带不带'取决于其经过的焦点带不带'。
+\subsubsection{焦距}
+\begin{align}
+f'=\overline{H'F'}=\frac{h}{u'} \tag{2.3.3.a}\\
+f=\overline{HF}=\frac{h}{u} \tag{2.3.3.b}
+\end{align}
+\subsubsection{节点$J,J'$}
+一对$\gamma=1$的共轭点。物方入射于 J 的任意光线，将以相同方向从 J’射出
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/3.2.png}
+            \end{figure}
+由三角形全等，显然可得
+\begin{align}
+    x_J'=f \tag{2.3.4.a} \\
+    X_J=f' \tag{2.3.4.b}
+ \end{align}
+ 显然当两边焦距一样的时候，节点和主点重合，这时候也就是$n=n'$，光学系统两边折射率相同。
+而事实上，只要确定了主点和焦点的相对位置，一个光学系统的理想模型就已经确定了。
+所以$H,H',F,F'$这四点就称作光学系统的\textbf{基点}。
+
+所以就可以用光轴和一对主面，一对焦点代表一个理想光学系统。对于单个折射球面，球面镜和波透镜都相当于
+两个主面重叠的情况。
+\textcolor{red}{\textbf{注意焦点不是共轭面}}
+\subsubsection{理想光学系统的物像位置关系}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/3.3.png}
+            \end{figure}
+最显然的我们可以得到
+\begin{align}
+    x x'=f f' \tag{2.3.5.a}\\
+    \frac{f'}{l'}+\frac{f}{l}=1 \tag{2.3.5.b}\\
+    x=l-f \quad x'=l'-f' \tag{2.3.5.c} \\
+    f'n+fn'=0 \tag{2.3.5.d} \\
+    \beta=\frac{nl'}{n'l}=-\frac{fl'}{f'l} \tag{2.3.5.e}\\
+    \frac{n'}{f'}-\frac{n}{f}=\Phi=\frac{n'}{f'}=\frac{-n}{f} \tag{2.3.5.f}
+\end{align}
+
+% 将式(2.4.1.c)代入(2.4.1.a)可得(2.4.1.b)
+\subsubsection{作图原则}
+\begin{enumerate}[nosep]
+\item 主面交点光线高度相同
+\item 过节点的光线方向不变$\gamma =1$
+\item 任意方向的一束平行光经理想光学系统后必交于像方焦平面上一点
+\item 过物方焦平面上一点的光线经理想光学系统后必为一束平行光
+\item 平行于光轴的光线经理想光学系统后必通过像方焦点
+\item 过物方焦点的光线经理想光学系统后必为平行于光轴的光线
+\end{enumerate}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/3.4.png}
+            
+            \includegraphics[width=8cm]{img/3.5.png}
+        \end{figure}
+\subsubsection{光束的汇聚度和系统的汇聚度}
+首先直接给出几个概念
+\begin{description}[nosep]% nosep没有垂直间隔
+    \item[折合物距] $\displaystyle \frac{l}{n}$
+    \item[折合像距]$\displaystyle \frac{l'}{n'}$
+    \item[折合焦距]   $\displaystyle \frac{f'}{n'}$
+    \item[汇聚度] $\displaystyle V=\frac{n}{l} \quad V'=\frac{n'}{l'}$,并且其为正代表光束是汇聚光束，反之为发散光束。
+    \item[光焦度]  $\displaystyle \Phi'=\frac{n'}{f'}=\frac{-n}{f}$，正表示汇聚作用。表征光学系统偏折光线的能力。单位：屈光度——以米为单位的焦距的倒数。
+\end{description}
+\begin{equation}
+\Phi=V'-V \tag{2.3.6}
+\end{equation}
+\subsubsection{透镜不同位置的成像情况}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/3.6.png}
+            \includegraphics[width=8cm]{img/3.7.png}
+            \end{figure} 
+\subsection{理想光学系统的组合分析}
+\subsubsection{两个理想光学系统}
+图解法，任意高度做一平行于光轴的线，经过光组在像方与入射线延长线相交。得到主面，另一方同理。(根据定义，主面高度相同)
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/3.8.png}
+            \includegraphics[width=8cm]{img/3.9.png}
+        \end{figure}
+然后我们对找完之后的图，来进行一下定量的分析。(以第二个光组的像方焦点、像方主点为起始点
+——合成光组的物方参量 以第一个光组的物方焦点、物方主点为起始点。)直接列写
+\begin{align}
+    \Delta =f-f'+f_2 \tag{2.3.7.a} \\
+    f=\frac{f_1f_2}{\Delta} \tag{2.3.7.b} \\
+    f=\frac{-f_1'f_2'}{\Delta}\tag{2.3.7.c}
+\end{align}
+\subsubsection{像差和组合分析}
+\section{平面与平面系统}
+\section{光阑}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[光阑 ]  光学系统中的一些中央开孔的挡光屏或光学元件的边缘。
+    \item[孔径光阑    ] 限制成像光束口径的大小，
+    \item[视场光阑    ] 限制成像范围的大小。
+    \item[渐晕光阑
+    ]遮挡轴外物体的部分光场，使像边缘模糊；
+
+    
+    \item[消杂光光阑    ]  消除镜面反射光、镜架炫光等引起的杂散光。
+
+\end{description}
+\subsection{入瞳出瞳和孔径角}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{img/4.1.png}
+            \end{figure}
+入瞳是孔径光阑经过光阑后面的光学系统成的像，出瞳是经过前面的光学系统成的像。如果其在最前面，那本来就是入瞳，如果在最后面，本来就是出瞳。
+\begin{description}[leftmargin=0.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[物方孔径角] 轴上物点到入射光瞳 
+\end{description}
+\section{光学仪器}
+\section{像差的种类和矫正}
