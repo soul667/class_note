@@ -522,7 +522,7 @@ f=\frac{h}{\tan U'} \tag{3.2.2.b}
 % f'=\overline{H'F'}=\frac{h}{u'} \tag{2.3.3.a}\\
 % f=\overline{HF}=\frac{h}{u} \tag{2.3.3.b}
 % \end{align}
-\subsection{基点}
+\subsubsection{基点}
 无限远轴外像物点$A,A'$，和像方、物方焦点$F,F'$以及主面的交点$H,H'$，可以确定所有物点的像点，代表一个理想光学系统。
 
 同时对于一些特殊的折射球面，单个折射球面，球面镜和波透镜都相当于两个主面重叠的情况。
@@ -539,52 +539,92 @@ $H,H',F,F'$这四点就称作光学系统的\textbf{基点}。
             \end{figure}
 由三角形全等，显然可得
 \begin{align}
-    x_J'={F'J'}=f \tag{3.3.1.a} \\
-    X_J=FJ=f' \tag{3.3.1.b}
+    x_J'={F'J'}=f \tag{3.2.4.a} \\
+    X_J=FJ=f' \tag{3.2.4.b}
  \end{align}
 当$f=f'$有
 \begin{align}
-    x_J'={F'J'}=-f'=F'H' \tag{3.3.1.a} \\
-    X_J=FJ=f'=-f=FH \tag{3.3.1.b}
+    x_J'={F'J'}=-f'=F'H' \tag{3.2.4.a} \\
+    X_J=FJ=f'=-f=FH \tag{3.2.4.b}
  \end{align}
 
 节点$J,J'$和主点$H,H'$重合，这时光学系统两边折射率相同。
 
-
-\subsubsection{理想光学系统的物像位置关系}
+\subsubsection{各物理量的表示}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{img/3.12.png}
+            \includegraphics[width=6cm]{img/3.13.png}
+            \includegraphics[width=8cm]{img/3.14.png}
+            \caption[图2.1]{两光组组合及符号示意图}
+            \end{figure}
+如上图2所示，有
+\begin{align}
+ f_{i}=H_{i}F_{i} \quad& f'_{i}=H'_{i}F'_{i} \tag{3.2.5.a}\\
+ x_{i}=F_{i}A_{i} \quad& x'_{i}=F'_{i}A'_{i} \tag{3.2.5.b}\\
+ l_i=H_iA_i \quad& l'_i=H'_iA'_i \tag{3.2.5.c}\\
+ A_i'=A_{i+1}& \tag{3.2.5.d}\\
+ d_i=H_{i}'H_{i+1} &=l_{i}'-l_{i+1}\tag{3.2.5.e}\\
+ \Delta_i=F_{i}'F_{i+1}&=x_i'-x_{i+1} \tag{3.2.5.f}\\
+ l_{F}=H_1 F \quad & l_{F}'=H_2' F' \tag{3.2.5.g}\\
+ l_{H}=H_1 H \quad & l_{H}'=H_2' H' \tag{3.2.5.h}
+\end{align}
+显然通过对以上公式的化简，有
+    \begin{align}
+        \Delta_i=F_{i}'F_{i+1}=-f_i'+d_{i}+f_{i+1} \tag{3.2.6.a}
+    \end{align}
+\subsection{理想光学系统的物像位置关系和放大率}
         \begin{figure}[H]
             \centering
             \includegraphics[width=8cm]{img/3.3.png}
             \end{figure}
-最显然的我们可以得到
-\begin{align}
-    x x'=f f' \tag{2.3.5.a}\\
-    \frac{f'}{l'}+\frac{f}{l}=1 \tag{2.3.5.b}\\
-    l=x+f \quad l'=x'+f' \tag{2.3.5.c} \\
-    f'n+fn'=0 \tag{2.3.5.d} \\
-    \beta=\frac{nl'}{n'l}=-\frac{fl'}{f'l} \tag{2.3.5.e}
-    % \frac{n'}{f'}-\frac{n}{f}=\Phi=\frac{n'}{f'}=\frac{-n}{f} \tag{2.3.5.f}
-\end{align}
+看图显然可以得到
+\begin{equation}
+\beta=\frac{y'}{y}=-\frac{x'}{f'}=-\frac{f}{x}\tag{2.3.5}
+\end{equation}
+% 最显然的我们可以得到
+% \begin{align}
+%     x x'=f f' \tag{2.3.5.a}\\
+%     \frac{f'}{l'}+\frac{f}{l}=1 \tag{2.3.5.b}\\
+%     l=x+f \quad l'=x'+f' \tag{2.3.5.c} \\
+%     f'n+fn'=0 \tag{2.3.5.d} \\
+%     \beta=\frac{nl'}{n'l}=-\frac{fl'}{f'l} \tag{2.3.5.e}
+%     % \frac{n'}{f'}-\frac{n}{f}=\Phi=\frac{n'}{f'}=\frac{-n}{f} \tag{2.3.5.f}
+% \end{align}
 \begin{quote}
 {\parindent2\ccwd\kaishu\zihao{5}
 这里只列举一部分，就和第一章一样，参照第一章就好。
 }
 \end{quote}
+如果含有k个反射面，有
+\begin{equation}
+    \beta=\frac{y'}{y}=(-1)^{k+1}\frac{n'}{n} \tag{2.3.6}
+\end{equation}
+
+轴向点移动$\Delta$距离后，其垂轴放大率为
+\begin{equation}
+\overline{\alpha}=\frac{n'}{n}\beta_1\beta_2 \tag{2.3.7}
+\end{equation}
 % 将式(2.4.1.c)代入(2.4.1.a)可得(2.4.1.b)
 \subsubsection{作图原则}
-\begin{enumerate}[nosep]
-\item 主面交点光线高度相同
-\item 过节点的光线方向不变$\gamma =1$
-\item 任意方向的一束平行光经理想光学系统后必交于像方焦平面上一点
-\item 过物方焦平面上一点的光线经理想光学系统后必为一束平行光
-\item 平行于光轴的光线经理想光学系统后必通过像方焦点
-\item 过物方焦点的光线经理想光学系统后必为平行于光轴的光线
-\end{enumerate}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[同心光束] 同心光束还成同心光束
+    \item[轴上] 轴上物点的像点还在轴上  
+    \item[主面] $\beta=1$
+    \item[节点]  $\gamma =1$
+    \item[无穷远像物方轴上点] 平行轴向光，与焦点共轭
+    \item[无穷远像物轴外电点] 斜向平行光，与焦面某点共轭   
+\end{description}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+对于轴外一点，一平行一过焦点。对于轴上，找过A点和F的平行光线或者同心光束，使用以上方法即可。
+}
+\end{quote}
         \begin{figure}[H]
             \centering
             \includegraphics[width=8cm]{img/3.4.png}
             
-            \includegraphics[width=8cm]{img/3.5.png}
+            \includegraphics[width=8cm]{img/3.11.png}
         \end{figure}
 \subsubsection{光束的汇聚度和系统的汇聚度}
 首先直接给出几个概念
@@ -596,13 +636,18 @@ $H,H',F,F'$这四点就称作光学系统的\textbf{基点}。
     \item[光焦度]  $\displaystyle \Phi'=\frac{n'}{f'}=\frac{-n}{f}$，正表示汇聚作用。表征光学系统偏折光线的能力。单位：屈光度——以米为单位的焦距的倒数。
 \end{description}
 \begin{equation}
-\Phi=V'-V \tag{2.3.6}
+\Phi=V'-V \tag{2.3.8}
 \end{equation}
 \subsubsection{透镜不同位置的成像情况}
         \begin{figure}[H]
             \centering
             \includegraphics[width=8cm]{img/3.6.png}
             \includegraphics[width=8cm]{img/3.7.png}
+            \caption[]{其实就看$when \quad l'=\infty$}
+            上面的一个是正透镜，下面是负透镜。注意$F'$的位置。然后注意2F的位置是-1，原点是1，画出趋势图就行。
+            $$
+            \beta=\frac{nl'}{n'l}=-\frac{fl'}{f'l}
+            $$
             \end{figure} 
 \subsection{理想光学系统的组合分析}
 \subsubsection{两个理想光学系统}
@@ -615,10 +660,11 @@ $H,H',F,F'$这四点就称作光学系统的\textbf{基点}。
 然后我们对找完之后的图，来进行一下定量的分析。(以第二个光组的像方焦点、像方主点为起始点
 ——合成光组的物方参量 以第一个光组的物方焦点、物方主点为起始点。)直接列写
 \begin{align}
-    \Delta =f-f'+f_2 \tag{2.3.7.a} \\
-    f=\frac{f_1f_2}{\Delta} \tag{2.3.7.b} \\
-    f=\frac{-f_1'f_2'}{\Delta}\tag{2.3.7.c}
+    \Delta_i &=-f_i'+d+f'_{i+1} \tag{2.3.7.a} \\
+     d_i&= H_i'H_{i+1}=l_i'-l_{i+1}\tag{2.3.7.b} \\
+    \Delta_i&=F_i'F_{i+1}=f_i'-f_{i+1}\tag{2.3.7.c}
 \end{align}
+ 
 \subsubsection{像差和组合分析}
 \section{平面与平面系统}
 \section{光阑}
