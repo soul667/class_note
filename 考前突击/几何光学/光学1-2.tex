@@ -659,34 +659,139 @@ $H,H',F,F'$这四点就称作光学系统的\textbf{基点}。
         \end{figure}
 然后我们对找完之后的图，来进行一下定量的分析。(以第二个光组的像方焦点、像方主点为起始点
 ——合成光组的物方参量 以第一个光组的物方焦点、物方主点为起始点。)直接列写
+
+
+一些公式懒的写了，直接记吧
 \begin{align}
-    \Delta_i &=-f_i'+d+f'_{i+1} \tag{2.3.7.a} \\
-     d_i&= H_i'H_{i+1}=l_i'-l_{i+1}\tag{2.3.7.b} \\
-    \Delta_i&=F_i'F_{i+1}=f_i'-f_{i+1}\tag{2.3.7.c}
+x_F&=F_1F\frac{f_1f_1'}{\Delta} \tag{2.3.7.a}\\
+x_F'&=F_2'F'=-\frac{f_1f_1'}{\Delta} \tag{2.3.7.b}\\
+HF&=\frac{f_1f_2}{\Delta} \tag{2.3.7.c}\\
+H'F'&=-\frac{f'_1f'_2}{\Delta} \tag{2.3.7.d}\\
+\Phi&=\Phi_1+\Phi_2-d\Phi_1\Phi_2 \tag{2.3.7.e}
 \end{align}
- 
-\subsubsection{像差和组合分析}
-\section{平面与平面系统}
-\section{光阑}
-\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
-    \item[光阑 ]  光学系统中的一些中央开孔的挡光屏或光学元件的边缘。
-    \item[孔径光阑    ] 限制成像光束口径的大小，
-    \item[视场光阑    ] 限制成像范围的大小。
-    \item[渐晕光阑
-    ]遮挡轴外物体的部分光场，使像边缘模糊；
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+也能看出当
+\begin{align}
+    d<f_{1}^{\prime}+f_{2}^{\prime}&\Rightarrow \Phi >0   \tag{2.3.8.a}\\
+    d=f_{1}^{\prime}+f_{2}^{\prime}&\Rightarrow \Phi =0  \tag{2.3.8.b}\\
+    d>f_{1}^{\prime}+f_{2}^{\prime}&\Rightarrow \Phi <0 \tag{2.3.8.c}
+\end{align}
+}
+\end{quote}
+        
+\begin{align}
+x_{F'}=F_2'F' &\quad f_2'=H_2'F_2' \tag{2.3.9.a} \\
+l_F'=H_2'F'& \quad  l'_H=H_2'H' \tag{2.3.9.b} \\
+x_{F}=F_1F &\quad f_1=H_1F_1 \tag{2.3.9.c} \\
+l_F=H_1F& \quad  l_H=H_1H \tag{2.3.9.d} 
+\end{align}
+因为
+$$
+\begin{aligned}
+    d&=H_1'H_2=l_1'-l_2 \\
+    \Delta&=F_1'F_2=x_1'-x_2\\
+    d-\Delta&=f_1'-f_2\\
+    f'&=-\frac{f_1'f_2'}{\Delta} \quad x_F'=-\frac{f_2f_2'}{\Delta}\\
+\end{aligned}
+$$
+\begin{equation}
+\begin{aligned}
+l_{F'}&=f_2'+x_F'=f_2'-\frac{f_2f_2'}{\Delta} \\
+&=f_2'-\frac{f_2f_2'}{d+f_2-f_1'}\\
+&=\frac{ f_2'd-f_2'f_1'}{\Delta}\\
+&=-\frac{f_1'f_2'}{\Delta}(-\frac{d-f_1'}{f_1'})\\
+&=f'(1-\frac{d}{f_1'})\\
+&=l_H'+f'
+\end{aligned} \tag{2.3.10}
+\end{equation}
 
-    
-    \item[消杂光光阑    ]  消除镜面反射光、镜架炫光等引起的杂散光。
+\begin{equation}
+    \begin{aligned}
+    l_{F}&=f_1+x_F\\
+    &=f_1+\frac{f_1f_1'}{\Delta} \\
+    &=f_1+\frac{f_1f_1'}{d+f_2-f_1'}\\
+    &=f_1\frac{ d+f_2}{\Delta}\\
+    &=\frac{f_1f_2}{\Delta}(\frac{d+f_2}{f_2})\\
+    &=f(1+\frac{d}{f_2})\\
+&=l_H+f
+    \end{aligned} \tag{2.3.11}
+    \end{equation}
 
-\end{description}
-\subsection{入瞳出瞳和孔径角}
+\subsubsection{多光组组合}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=8cm]{img/4.1.png}
+            \includegraphics[width=8cm]{img/3.17}
             \end{figure}
-入瞳是孔径光阑经过光阑后面的光学系统成的像，出瞳是经过前面的光学系统成的像。如果其在最前面，那本来就是入瞳，如果在最后面，本来就是出瞳。
-\begin{description}[leftmargin=0.7cm,style=nextline,nosep]% nosep没有垂直间隔
-    \item[物方孔径角] 轴上物点到入射光瞳 
-\end{description}
-\section{光学仪器}
-\section{像差的种类和矫正}
+\begin{align}
+    \Delta_i &=-f_i'+d+f_{i+1} \tag{2.3.12.a} \\
+     d_i&= H_i'H_{i+1}=l_i'-l_{i+1}\tag{2.3.12.b} \\
+    \Delta_i&=F_i'F_{i+1}=x_i'-x_{i+1}\tag{2.3.12.c}
+\end{align}
+显然(2.3.12.b)-(2.3.12.c) 可推导出(2.3.12.a)。
+\subsubsection{正切法}
+考虑高斯公式
+$$
+\frac{f}{l}+\frac{f'}{l'}=1
+$$
+对于两边都是空气$f+f'=0$，可得
+\begin{align}
+\frac{1}{l}-\frac{1}{l'}&=\Phi=\frac{1}{f'}\tag{2.3.13.bef.1} \\
+\frac{h}{l}-\frac{h}{l'}&\frac{h}{f'}\tag{2.3.13.bef.2} \\
+ \tan U_i -\tan U_i'&=\frac{h_i}{f_i'}\tag{2.3.13} 
+\end{align}
+
+倾角连续
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=6cm]{img/3.18.png}
+            \end{figure}
+\begin{equation}
+h_i=h_{i+1}+l_i \tan u_1' \tag{2.3.14}
+\end{equation}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+角度是从轴线到法线，顺正逆负。
+}
+\end{quote}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{img/3.19.png}
+    \end{figure}
+i从1到n,列出所有2.3.11和2.3.10。并且$u_1=0,h_1=\forall $。对于结果分析，有
+\begin{align}
+      l _ { F } ^ { \prime } &= \frac { h _ { k } } { u _ { k } ^ { \prime } }  \tag{2.3.15.a}\\
+    f ^ { \prime } &= \frac { h _ { 1 } } { u _ { k } ^ { \prime } }   \tag{2.3.15.b}
+\end{align}
+\subsubsection{截距法}
+因为$u_{i}'=u_{i+1}$
+\begin{equation}
+\begin{aligned}
+    f'&=\frac{h_1}{u_k'}\prod_{i=1}^{k-1}\frac{u_{i+1}}{u_{i}'} \\
+    &=l_1' \prod_{i=1}^{k-1}\frac{u_{i+1}}{u_{i+1}'}=l_1' \prod_{i=1}^{k-1}\frac{l'_{i+1}}{l_{i+1}}\\
+\end{aligned} \tag{2.3.16}
+\end{equation}
+\subsubsection{各光组对总光焦度的贡献}
+% \begin{equation}
+有高斯公式
+\begin{equation}
+    \frac{f}{l}+\frac{f'}{l'}=1 \tag{2.3.17}
+\end{equation}
+如果有$f+f'=0$,化简为
+\begin{equation}
+    \frac{1}{l'}-\frac{1}{l}=1 \tag{2.3.18}
+\end{equation}
+\begin{align}
+    \frac{h}{l'}-\frac{h}{l}=\frac{h}{f'} \tag{2.3.19.a}
+    \\
+    u'_{i}-u_{i}=u_{i+1}-u_{i}=\frac{h_i}{f_i'}=h_i\Phi_i\tag{2.3.19.b}\\
+    u_1=0 \tag{2.3.19.c}\\
+    u_k'=u_{k+1}=\sum_{i=1}^k{h_i\Phi_i}\tag{2.3.19}
+\end{align}
+
+\begin{equation}
+\Phi=\frac{1}{f'}=\frac{1}{\frac{h_1}{u_k'}}=\frac{u_k'}{h_1}=\frac{\sum_{i=1}^k{h_i\Phi_i}}{h_1}\tag{2.3.20}
+\end{equation}
+% \end{equation}
+\subsubsection{像差和组合分析}
+
