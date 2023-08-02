@@ -1,6 +1,6 @@
 \documentclass[twocolumn]{ctexart}
 % ctexart、ctexrep、ctexbook和ctexbeamer, 对应 LaTeX 的article、report、book和beamer
-\usepackage[a4paper,left=3cm,right=3cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
 \usepackage{fancyhdr} % 设置页眉页边页脚
 \usepackage{multicol} % 多栏排版
 \usepackage{xeCJK} % 中文支持
@@ -93,8 +93,8 @@
 \newtheorem{example}{例}
 \newtheorem{proposition}{命题}[section]
 
-\title{模电作业}
-\author{2021251124 古翱翔}
+\title{题目}
+\author{作者}
 \date{\today}
 
 \begin{document}
@@ -113,10 +113,15 @@
 \setlength{\parskip}{0em}
 \renewcommand{\baselinestretch}{1.53}
 
-% \section{序}
-% 从电子管(1904)到晶体管(1947)，再到集成电路(1958),再到超规模集成电路(1980)。摩尔定律，18-24。
-\input{./src/1.tex}
-\input{./src/2.tex}
-% \input{./src/作业.tex}
 
+\section{波动光学基础}
+光扰动是电磁扰动，光扰动随时空变化的规律，遵从麦克斯韦电磁场方程组。在没有自由电荷、传导电流分布的空间（称为自由空间）或线性介质中$\rho_0=0,J_0=0$ 只存在电场和磁场的相互激发。
+\[v= \frac{1}{\sqrt{\varepsilon _{r}\varepsilon _{0}\mu _{r}\mu _{0}}} 
+=\frac{c}{n}=\frac{1}{\sqrt{\varepsilon _{0}\mu _{0}}}\frac{1}{\sqrt{\varepsilon _{r}\mu _{r}}}\]
+\subsection{平面单色波}
+\begin{itemize}
+\item 电磁波为横波，$\vec{E}\times \vec{B}=k\vec{k}$
+\item E和B同相，振幅比为v
+\end{itemize}
+$\delta=2n \frac{h}{\cos \theta}$
 \end{document}

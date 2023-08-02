@@ -1,6 +1,6 @@
 \documentclass[twocolumn]{ctexart}
 % ctexart、ctexrep、ctexbook和ctexbeamer, 对应 LaTeX 的article、report、book和beamer
-\usepackage[a4paper,left=3cm,right=3cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
 \usepackage{fancyhdr} % 设置页眉页边页脚
 \usepackage{multicol} % 多栏排版
 \usepackage{xeCJK} % 中文支持
@@ -93,8 +93,8 @@
 \newtheorem{example}{例}
 \newtheorem{proposition}{命题}[section]
 
-\title{模电作业}
-\author{2021251124 古翱翔}
+\title{模电研讨5}
+\author{}
 \date{\today}
 
 \begin{document}
@@ -113,10 +113,53 @@
 \setlength{\parskip}{0em}
 \renewcommand{\baselinestretch}{1.53}
 
-% \section{序}
-% 从电子管(1904)到晶体管(1947)，再到集成电路(1958),再到超规模集成电路(1980)。摩尔定律，18-24。
-\input{./src/1.tex}
-\input{./src/2.tex}
-% \input{./src/作业.tex}
+
+\section{二极管应用}
+\subsection{1}
+% \subsubsection{讨论}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+二极管的分析方法，多个二极管工作时如何分析电路状态
+}
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[只有一个] 断开算两端电压
+    \item[两个或者多个] 共阴阳只有一个可以正常工作(相等是两个)，可以看谁不共的大或者使用\underline{\textbf{假设}}法。
+    \item[稳压二极管] 工作在击穿区？
+    \item[其他] SI 0.7， GE 0.2    
+\end{description}
+\end{quote}
+
+\begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{img/1.1.png}
+            \end{figure}
+% 共阳极，就看阴极谁最小，画出$U_o-U_A/U_B$的图形，顺便。
+% \subsubsection{题目}
+
+\section{稳压二极管的应用}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+稳压二极管的工作状态和分析方法
+}
+工作在反向击穿区域，端电压基本不变。
+\end{quote}
+\section{三极管的应用}
+\section{多级放大电路}
+\section{功率放大电路}
+\section{失真}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+讨论：三极管的各种失真状况，以及如何减小这些失真
+}
+\end{quote}
+\begin{itemize}
+\item 当基极电流不稳定或不均匀时，会导致输出信号失真。减小基极电流失真的方法包括使用\underline{\textbf{稳定的电源电压}}和
+\textbf{\underline{适当的偏置电流设置}}。
+\item 温度的变化可能引起输出信号的失真。减小温度失真的方法包括良好的散热设计和稳定的工作温度
+\item 在高频或低频时出现失真。减小频率响应失真的方法包括使用高质量的三极管和适当的频率补偿电路。
+\item 当三极管处于截止状态时，可能会引起截止失真。这会导致输出信号的截断和失真。减小截止失真的方法包括适当选择偏置电流和保证输入信号处于合适的幅度范围内
+\item 当三极管被过度驱动，处于饱和状态时，可能引起饱和失真。这会导致输出信号的平顶和截断。为了减小饱和失真，需要适当选择电源电压和控制输入信号的幅度。
+\end{itemize}
+
 
 \end{document}

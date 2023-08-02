@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pst-optexp} % 导入pst-optexp宏包
+\begin{document}
+\begin{pspicture}(10,6) % 定义画布大小
+  \psset{unit=0.5cm} % 设置单位为0.5厘米
+  \pnode(2,3){A} % 定义物镜的左端节点A
+  \pnode(8,3){B} % 定义目镜的右端节点B
+  \lens[lens=4 4 2, n=1.5](A)(B) % 在AB之间画一个物镜，曲率半径为4，折射率为1.5
+  \lens[lens=2 6 2, abspos=4, n=1.5](A)(B) % 在AB之间距离A点4个单位处画一个目镜，曲率半径为2和6，折射率为1.5
+  \optbox[position=start, optboxwidth=1.5, labeloffset=0](A)(B){物体} % 在A点处画一个宽度为1.5的物体
+  \optbox[position=end, optboxwidth=1.5, labeloffset=0](A)(B){眼睛} % 在B点处画一个宽度为1.5的眼睛
+  \drawwidebeam[beamwidth=0.5, fillstyle=solid, fillcolor=green!20](A){1}{2}{3} % 从物体发出一束宽度为0.5的光线，经过两个透镜后到达眼睛
+\end{pspicture}
+\end{document}

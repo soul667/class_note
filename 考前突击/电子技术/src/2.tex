@@ -54,8 +54,8 @@ $$
 最大输出功率$p_{om}$,电源效率为$\eta=\frac{p_{om}}{p_v}$
 \subsubsection{直流通路和交流通路}
 \begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
-    \item[直流通路] $U_S=0$，电容开路，电感短路。用于研究静态工作点
-    \item[交流通路] 直流电源短路，大容量电容短路。  用于动态参数研究
+    \item[直流通路] $U_S=0$，保留$R_s$电,容开路，电感短路。用于研究静态工作点
+    \item[交流通路] 直流电源短路(如$V_{CC}$)，大容量电容短路。  用于动态参数研究
 \end{description}
 
 先静后动。静态有计算和图解，动态有图解和微变等效。
@@ -80,6 +80,20 @@ $\displaystyle  \frac{V_{\mathbb{CC}}}{R_c}$，
             \includegraphics[width=7cm]{img/2.7.png}
 
             \end{figure}
+\subsubsection{图解最大不失真电压以及直流交流负载线}
+\begin{table}[H]
+      \centering
+      \begin{tabular}{|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|}
+      \hline
+      % \mathrm{R}e,\mathrm{I}m$实部，虚部
+          名称 & 斜率&其他\\ \hline
+          直流负载&$\displaystyle -\frac{1}{R_c}$&交于$Q$\\ \hline
+          交流负载&$\displaystyle -\frac{1}{R_c// R_L}$&\\  \hline
+          
+        \end{tabular}
+        \caption{}
+      \end{table}
+
 \subsubsection{电位分析法}
 一个一个地写起来，使用基尔霍夫电压定律。
 \subsubsection{估算法}
@@ -96,7 +110,7 @@ $\displaystyle  \frac{V_{\mathbb{CC}}}{R_c}$，
 \subsubsection{等效电路}
 先找Q点，再找$\displaystyle r_{be}=r_{bb}+(H\beta)\frac{U_T}{I_{EQ}}$
 
-\subsubsection{静态分析法列写方程}
+% \subsubsection{静态分析法列写方程}
 
 \subsection{动态分析}
 \subsection{h参数等效电路}
@@ -147,7 +161,7 @@ $$
     r_{be}&=r_{bb'}+\frac{U_T}{I_{BQ}} \tag{3.4.d}\\
     A_I&\thickapprox \beta \frac{R_{L}'}{R_L}
 \end{align}
-\subsubsection{最大不失真电压}
+% \subsubsection{图解最大不失真电压}
 \subsubsection{失真分析}
 \subsection{放大电路Q点的稳定性}
 温度，电源波动，元器件老化都会引起Q点波动。会失真，截至失真，饱和失真。

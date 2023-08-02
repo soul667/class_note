@@ -1,0 +1,394 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage[a4paper,left=3cm,right=3cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
+\usepackage{fancyhdr} % 设置页眉页边页脚
+\usepackage{multicol} % 多栏排版
+\usepackage{xeCJK} % 中文支持
+\usepackage{ctex} % 中文支持
+\usepackage{footmisc} % 控制脚注格式，包括编号、字体、分隔线等
+\usepackage{titletoc} % 定制目录列表样式
+\usepackage{fontspec} % XeTeX下的字体选择宏包
+\usepackage{setspace} % 行距
+\usepackage{graphicx} % 插图
+\usepackage{pdfpages} % 引用pdf页面
+\usepackage{booktabs} % 三线表
+\usepackage{multirow} % 表格多行支持
+\usepackage{caption} % figure和table等中的说明文字
+\usepackage{tikz} % 绘图
+\usepackage{etoolbox} % 给宏包打补丁
+\usepackage{hyperref} % 超链接
+\usepackage{xcolor} % 颜色支持
+\usepackage{array} % 数学表格
+\usepackage{amsmath} % 数学公式
+\usepackage{amssymb} % 数学字体与符号
+\usepackage{amsthm} % 数学定理格式
+\usepackage{subfig} % 排版子图
+\usepackage{float} % 浮动体格式控制
+\usepackage{lmodern} % 一种字体支持
+\usepackage{listings} % 插入代码
+\usepackage{tcolorbox} % 好看的块环境
+\usepackage{pifont} % 字体支持
+\usepackage{perpage} %the perpage package
+\usepackage{mathdesign} % some math fonts
+\usepackage{ulem} %一些文字强调的宏包
+\usepackage{fancyvrb} % some fancy verbatim 
+\usepackage{enumitem} % 列表项目
+\usepackage{txfonts} % 一些字体
+\usepackage{makecell}
+\usepackage{mathrsfs}
+\usepackage{subfig}                 % 子图包，不要与{subfigure}混用，{subfig}较新
+\usepackage{overpic}   
+%
+\usepackage{eso-pic}
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{background}
+\usepackage{lipsum}
+\usepackage{xpatch}
+\usepackage{fancyhdr}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d}
+\makeatletter
+
+% allow multiline contents
+\xpatchcmd\bg@material
+  {inner sep=0pt}
+  {inner sep=0pt, align=center, font=\fontsize{1.7}{4}\selectfont}
+  {}{\fail}
+\makeatother
+
+% \usepackage{draftwatermark}         % 所有页加水印
+% %\usepackage[firstpage]{draftwatermark} % 只有第一页加水印
+% \SetWatermarkText{古翱翔 2021251124}           % 设置水印内容
+% %\SetWatermarkText{\includegraphics{fig/texlion.png}}         % 设置水印logo
+% \SetWatermarkLightness{0.85}             % 设置水印透明度 0-1
+% \SetWatermarkScale{0.5}   
+
+
+%重置每页脚注序号
+% \MakePerPage{footnote} %the perpage package command
+% \renewcommand \thefootnote{\ding{\numexpr171+\value{footnote}}}
+\pagestyle{headings} 
+% 为tcolorbox导入三个程序包
+\tcbuselibrary{skins, breakable, theorems} 
+
+% 设置代码格式 - 关键字加粗, 其余为正常。非彩色
+\lstset{
+    aboveskip=5mm,
+    belowskip=5mm,
+    breaklines=true,
+    breakatwhitespace=true,
+    columns=flexible,
+    extendedchars=false,
+    showstringspaces=false,
+    numbers=none,
+    basicstyle={\small\ttfamily},
+    captionpos=t,
+    frame=tb,
+    tabsize=4
+}
+
+\lstdefinestyle{cpp} {
+  language=C++
+}
+
+\lstdefinestyle{c++} {
+  language=C++
+}
+
+\lstdefinestyle{python} {
+  language=python,
+  morekeywords={as}
+}
+
+% 为目录添加 PDF 链接
+\addtocontents{toc}{\protect\hypersetup{hidelinks}}
+
+% 设置「目录」二字格式
+\renewcommand{\contentsname}{
+  \fontsize{16pt}{\baselineskip}
+  \normalfont\heiti{目~~~~录}
+  \vspace{-8pt}
+}
+
+% 定理、定义、证明
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{example}{例}
+\newtheorem{proposition}{命题}[section]
+\title{多目标识别预测}
+\author{luobai}
+\date{\today}
+
+\begin{document}
+
+% 显示标题作者时间
+\maketitle
+\newpage
+
+% 调整目录行间距
+\renewcommand{\baselinestretch}{1.35}
+% 添加目录
+\tableofcontents
+\newpage
+
+% 正文 22 磅的行距
+\setlength{\parskip}{0em}
+\renewcommand{\baselinestretch}{1.53}
+
+
+\section{SIMPLE ONLINE AND REALTIME TRACKING}
+\begin{quote}
+{\qquad\parindent2\ccwd\kaishu\zihao{5}
+一篇来自IEEE的快速多目标跟踪算法。
+}
+\end{quote}
+
+\subsection{ABSTRACT}
+本文探讨了一种多目标跟踪的语用方法，其主要目的是为在线和实时应用高效地关联目标。，检测质量被认为是影响跟踪性能的一个关键因素，
+改变检测器可以提高跟踪高达18.9\% 。尽管只使用了卡尔曼滤波器和匈牙利算法等常见技术的基本组合进行跟踪，
+但这种方法达到了与最先进的在线跟踪器相当的精度。
+
+此外，由于我们的跟踪方法的简单性，跟踪器更新在260赫兹的速率，这是超过20倍的速度比其他国家的最先进的跟踪器。
+
+\subsection{简介}
+MOT(多目标识别)问题可以看作是一个数据关联问题，
+其目的是在视频序列中跨帧关联检测。为了辅助数据关联过程，跟踪器使用各种方法来模拟场景中物体的运动
+和外观。本文采用的方法是通过观察最近建立的视觉 MOT 基准。
+
+首先，包括多假设跟踪(MHT)和联合概率数据关联(JPDA)在内的成熟数据关联技术重新出现，
+占据了 MOT 基准的许多顶级位置。其次，唯一不使用聚合信道滤波器(ACF)检测器的跟踪器也是排名最高的追踪器，表明检测质量可能会阻碍其他追踪器。此外，精度和速度之间的权衡似乎相当明显，因为最准确的追踪器的速度被认为是太慢的实时应用(见图1)。随着传统数据关联技术在顶级在线跟踪器和批量跟踪器中的突出地位，以及顶级跟踪器所使用的不同检测方法的使用，本文探讨了 MOT 的简单性以及它的性能。
+
+为了与Occam’s Razor保持一致，在跟踪中忽略了检测组件一些外观特征，
+只使用边界框的\textbf{位置}和\textbf{大小}进行运动估计和数据关联。
+此外，有关短期和长期闭塞的问题也被忽视，因为它们很少发生，其明确的治疗介绍
+导致跟踪框架的不必要复杂性。我们认为将复杂性以对象重新识别的形式引入到跟踪框架中会增加大量的开销，这可能会限制它在实时应用中的使用。
+
+这篇论文的主要贡献是:
+\begin{enumerate}[label=$\varspadesuit$,nosep]% nosep表示没有垂直间隔
+    \item 我们在 MOT 的背景下利用基于 CNN 的检测能力。提出了一种基于卡尔曼滤波器和匈牙利算法的实用跟踪方法，并根据最近的 MOT 基准进行了评估。
+    \item 代码开源，以帮助建立避免碰撞应用方面的研究试验和吸收的基准方法。
+\end{enumerate}
+本文组织如下: 
+\begin{enumerate}[label=$\varspadesuit$,nosep]% nosep表示没有垂直间隔
+    \item 第2节提供了一个在多目标跟踪领域的相关文献的简短回顾。
+    \item 第3节介绍了拟议的精益跟踪框架
+    \item 在第4节中论证了关于标准基准序列的拟议框架的有效性
+    \item 第5部分提供了学习结果的总结，并讨论了未来的改进
+\end{enumerate}
+
+\subsection{文献综述}
+传统上，MOT是使用多目标跟踪(MHT)[7]或联合概率数据关联(JPDA)过滤器[16，2]来解决的，
+它们在目标分配存在高度不确定性的情况下延迟了困难的判断。
+
+这些方法的组合复杂性随着被跟踪目标的数量呈指数增长，
+这使得它们在高动态环境中的实时应用变得不实用。
+
+最近，Rezatofighi et al.[2]，在可视化MOT中重新讨论了JPDA公式[16]，
+目的是通过利用求解方面的最新发展，利用JPDA的有效近似来解决组合复杂性问题。
+
+类似地，Kim 等人[3]对每个目标使用外观模型来修剪 MHT 图，
+以实现最先进的性能。
+然而，这些方法仍然延迟决策，使他们不适合在线跟踪。
+
+许多在线跟踪方法旨在通过在线学习建立单个物体本身的外观模型[17,18,12]或全局模型
+[19,11,4,5]。除了外观模型之外，运动通常被用来协助将检测关联到轨迹[1,19,4,11]。
+当只考虑作为二部图匹配模型的一对一对应时，可以使用全局最优解，如匈牙利算法[15][10,20]。
+
+Geiger 等[20]的方法在两阶段过程中使用了匈牙利算法[15]。
+首先，通过将相邻帧间的检测关联起来形成小路，在这些帧中，
+几何和外观线索被组合起来形成\textbf{亲和矩阵}。然后，轨迹相互关联，
+以桥接\textbf{由遮挡造成的破碎轨迹}，再次使用几何和外观线索。
+
+这种两步关联方法限制了这种方法的批处理计算。我们的方法受到了[20]的跟踪组件的启发，
+但是我们将这种关联简化为一个单一的阶段，并使用下一节中描述的基本线索。
+\subsection{方法}
+该方法通过对目标检测的关键部分进行描述，
+包括将目标状态传播到未来帧、
+将当前检测与现有目标相关联以及管理被跟踪目标的生命周期。
+
+\subsubsection{Detection}
+为了利用基于 CNN 的检测的快速发展，我们使用更快的区域 CNN (FrRCNN)检测框架[13]。FrRCNN 是一个端到端的框架，由两个阶段组成。第一阶段提取特征并为第二阶段提出区域，然后对提出的区域中的对象进行分类。这个框架的优点是参数可以在两个阶段之间共享，从而创建一个有效的检测框架。此外，网络架构本身可以交换到任何设计，使快速实验的不同架构，以提高检测性能。
+
+在这里，我们比较了 FrRCNN 提供的两种网络架构，即 Zeiler 和 Fer-gus (FrRCNN (ZF))的架构[21]和 Si-monyan 和 Zisserman (FrRCNN (VGG16))的更深层架构[22]。通过这项工作，我们应用了学习的默认参数为 PASCAL VOC 挑战的 FrRCNN。由于我们只对行人感兴趣，我们忽略所有其他类别，只通过输出概率大于50\% 的人检测结果的跟踪框架。
+
+在我们的实验中，我们发现当比较 FrRCNN 检测和 ACF 检测时，检测质量对跟踪性能有显著的影响。这是演示使用的序列验证集应用于现有的在线跟踪器 MDP [12]和跟踪器在这里提出。表1显示了最佳的检测器(FrRCNN (VGG16))导致最佳的跟踪精度的 MDP 和提出的方法。
+
+\subsubsection{Estimation Model 评估模型}
+在这里，我们描述了目标模型，即表示和运动模型，
+用于传播目标的身份到下一帧。
+
+我们使用\textbf{线性恒速模型}来近似每个物体的帧间位移，该模型与其他物体和摄像机的运动无关。每个目标的状态建模如下
+\begin{equation}
+    x= \left[ u,v,s,r, \dot{u}, \dot{v}, \dot{s}\right] ^{T} \tag{1.1}
+\end{equation}
+其中
+\begin{description}[leftmargin=1.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[$u$] 目标中心的水平像素位置
+    \item[$v$] 目标中心的垂直像素位置
+    \item[$s$] 目标边界框的比例面积
+    \item[$r$] 目标边界框的长宽比
+    \item[$\dot{u} $] ---
+    \item[$\dot{v} $] ---
+    \item[$\dot{s} $]  --- 
+\end{description}
+其中 u 和 v 表示目标中心的水平和垂直像素位置，而比例尺 s 和 r 分别表示目标边界框的比例(面积)和长宽比。请注意，纵横比被认为是常数。当检测与目标相关联时，检测到的包围盒用于更新目标状态，其中速度分量通过卡尔曼滤波框架得到最优解[14]。如果没有检测相关的目标，其状态是简单的预测，没有修正使用线性速度模型。
+
+\subsubsection{数据关联}
+在为现有目标分配检测时，通过预测目标在当前帧中的新位置
+来估计每个目标的\textbf{边界盒几何形状}。
+然后，将分配代价矩阵计算为每个检测器与现有目标的所有预测边界盒
+之间的交集合距离(IOU)。
+
+利用匈牙利算法对指派问题进行了优化求解。
+另外，在目标重叠的检测值小于 $IOU_{min}$ 的情况下，
+施加最小 IOU 来拒绝分配。
+
+发现边界框的 IOU 距离隐含地处理了由于目标通过而造成的短期遮挡。具体来说，当目标被遮挡物覆盖时，只有遮挡物被检测到，因为 IOU 距离适当地有利于具有相似尺度的检测。这允许两个遮挡目标被纠正与检测，而覆盖的目标是不受影响，因为没有任何分配
+\subsubsection{Creation and Deletion of Track Identities 创建和删除跟踪标识}
+当对象进入和离开图像时，需要相应地创建或销毁独特的标识。
+对于创建跟踪器，我们考虑任何重叠小于 $IOU_{\min}$ 的检测，
+以表明存在未跟踪的对象。
+
+跟踪器初始化使用的几何边界盒与速度设置为零。
+由于速度在这一点没有被观测到，\textbf{速度分量的协方差被初始化为较大的值，
+反映了这种不确定性}。
+
+此外，新的跟踪器然后经历一个试用期，目标需要与检测相关联，
+以积累足够的证据，以防止跟踪误报。
+
+如果没有为 TLost 帧检测到轨道，则终止它们。这可以防止跟踪器数量的无限增长和由于长时间的预测而导致的本地化错误，而不需要检测器的修正。在所有实验中，TLost 设置为1有两个原因。首先，恒定速度模型不能很好地预测真实的动态，其次，我们主要关注的是帧到帧的跟踪，其中目标的重新识别超出了这项工作的范围。此外，早期删除丢失的目标有助于提高效率。如果对象重新出现，跟踪将在新标识下隐式恢复。
+
+\subsection{实验}
+我们评估我们的跟踪实现的性能-在一个由 MOT 基准数据库[6]设置的
+不同的测试序列集，其中包含移动和静态摄像机序列。为了调整初始 Kalman fil-ter 协方差、 IOUmin 和 TLost 参数，我们使用了与[12]中报道的相同的训练/验证分割。所使用的检测架构是 FrRCNN (VGG16)[22]。来自[22]的源代码和示例检测可在线获得。
+
+\subsubsection{度量}
+由于很难使用一个单一的评分来评估多目标跟踪性能，
+我们使用了[24]中定义的评估指标，以及标准的 MOT 指标[25]
+\begin{description}[leftmargin=2.7cm,style=nextline,nosep]% nosep没有垂直间隔
+    \item[MOTA(up)] 多目标跟踪精度accuracy
+    \item[MOTP(up)] 多目标跟踪精度precision
+\end{description}
+\section{ExtendedKalmanFilter仿真及实现}
+\section{卡尔曼滤波学习}
+卡尔曼滤波（Kalman filter）是一种高效率的递归滤波器（自回归滤波器），
+它能够从一系列的不完全及包含噪声的测量中，估计动态系统的状态。
+ 卡尔曼滤波会根据各测量量在不同时间下的值，考虑各时间下的联合分布，
+ 再产生对未知变数的估计，因此会比只以单一测量量为基础的估计方式要准。
+
+ \subsection{马尔可夫链}
+ 马尔可夫链又称离散时间马可夫链（discrete-time Markov chain，缩写为DTMC），因俄国数学家安德烈·马尔可夫得名，为状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马可夫性质。马尔科夫链作为实际过程的统计模型具有许多应用。
+ \subsection{基本动态系统模型}
+ 卡尔曼滤波建立在线性代数和隐马尔可夫模型（hidden Markov model）上。
+ 
+ 其基本动态系统可以用一个马尔可夫链表示，
+ 该马尔可夫链建立在一个被高斯噪声（即正态分布的噪声）干扰的线性算子
+ 上的。
+ 
+ 系统的状态可以用一个元素为实数的矢量表示。 随着离散时间的每一个增加，这个线性算子就会作用在当前状态上，产生一个新的状态，并也会带入一些噪声，同时系统的一些已知的控制器的控制信息也会被加入。 同时，另一个受噪声干扰的线性算子产生这些隐含状态的可见输出。
+
+\section{长宽比与角度的关系}
+对目标物体进行建系
+\tdplotsetmaincoords{30}{115}
+        \begin{figure}[H]
+            \centering
+            % \begin{tikzpicture}[scale=1.5]
+            %   \pgfversion
+            %   \draw[thick,->] (0,0,0) -- (2.5,0,0) node[anchor=north east]{$x$};
+            %   \draw[thick,->] (0,0,0) -- (0,2.5,0) node[anchor=north west]{$y$};
+            %   \draw[thick,->] (0,0,0) -- (0,0,2.5) node[anchor=south]{$z$};
+            %   \draw[thick,->] (0,0,0) -- (0,0,2.5) node[anchor=south]{$z$};
+
+            % \end{tikzpicture}
+            \begin{tikzpicture}
+              [tdplot_main_coords,
+                cube/.style={very thick,black},
+                grid/.style={very thin,gray},
+                axis/.style={->,blue,thick}]
+   
+            % %draw the axes
+            \draw[] (0,0,0) -- (0,0,1) node[left]{$l$};
+            \draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+            \draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
+            \draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+          
+            % %draw the top and bottom of the cube
+            % \draw[cube] (0,0,0) -- (0,2,0) -- (2,2,0) -- (2,0,0) -- cycle;
+            % \draw[cube] (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) -- cycle;
+            
+            % %draw the edges of the cube
+            % \draw[cube] (0,0,0) -- (0,0,0) -- (0,2,2) -- (0,4,0) --(0,0,0);
+            \draw[cube] (0,0,0) -- (0,4,0) -- (-0.672,4,2.5) -- (-0.672,0,2.5) --(0,0,0);
+        % arctan(\frac{2.5}{0.6725})/3.14*180    
+            % \draw[->,color=red,-latex,very thick] (0,2,1) -- (0,2,1.2) node[left]{I};%<〈node spec〉%> {%<content%>};;
+            \filldraw[] (0,0,0) circle(1pt) node[anchor=north]{$O$};
+            \filldraw[] (8,2,4.5) circle(2pt) node[anchor=north]{$\text{相机光心}O_3(x_0,y_0,z_0)$};
+            \filldraw[] (0,2,0) circle(2pt) node[anchor=north]{$\text{bottom}$};
+            \filldraw[] (-0.675,2,2.5) circle(2pt) node[anchor=north]{$\text{above}$};
+            \filldraw[] (-0.675/2,2,2.5/2) circle(2pt) node[anchor=north]{$O_1\hspace{0.1cm}  (x_1,y_1,z_1)$};
+
+            \draw[->,thick,-stealth] (0,2,0) -- (-0.675,2,2.5);
+            \draw[->,thick,dashed] (8,2,4.5) -- (-0.675/2,2,2.5/2);
+            %画虚线
+            % \draw[,thick] (0,2,0) -- (-0.675/2,2,2.5/2) node[above]{d};
+            % \draw[dashed,thick] (0,1,1) -- (1,1,1) node[above]{d};
+            % \draw[->,thick,-stealth] (0,1,1) -- (2,1,1)node[right]{$B_{O}=4\times {B}_{\mathrm{I}}$} ;
+             % draw a circle
+            % \draw[thick] (0,0,0) circle (2cm);            
+          \end{tikzpicture}
+        \caption{示意图1}
+            \end{figure}
+如上图所示，此时观测到的角度一定在90度左右，其实我们观测到的角度是投影在$OZY$平面上的角度。并且假定车中心为$O_2(x_2,y_2,z_2)$。根据投影角度，我们可以大致拟合出其绕$O_2$的转动角度。
+虽然存在透视变化，但基本准确。
+
+假设$O_3,O_2$ 处于一条直线，以y轴正方向，x轴正方向为正定义旋转角度为从上往下看绕y轴负方向旋转角度(0-360)。设转动角度$\theta$。
+\tdplotsetmaincoords{180}{115}
+
+\begin{figure}[H]
+  \centering
+  % \begin{tikzpicture}[scale=1.5]
+  %   \pgfversion
+  %   \draw[thick,->] (0,0,0) -- (2.5,0,0) node[anchor=north east]{$x$};
+  %   \draw[thick,->] (0,0,0) -- (0,2.5,0) node[anchor=north west]{$y$};
+  %   \draw[thick,->] (0,0,0) -- (0,0,2.5) node[anchor=south]{$z$};
+  %   \draw[thick,->] (0,0,0) -- (0,0,2.5) node[anchor=south]{$z$};
+
+  % \end{tikzpicture}
+  \begin{tikzpicture}
+    [tdplot_main_coords,
+      cube/.style={very thick,black},
+      grid/.style={very thin,gray},
+      axis/.style={->,blue,thick}]
+
+  % %draw the axes
+  \draw[] (0,0,0) -- (0,0,1) node[left]{$l$};
+  \draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+  \draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
+  \draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+  \draw[thick] (0,0,0) circle (2cm);       
+  \draw[thick] (0,0,1.25) circle (1.5cm); % 圆2
+  %取圆2上一点
+  \filldraw[] (0,0,1.25) circle(1pt) node[anchor=north]{$O_3$};      
+
+\end{tikzpicture}
+\caption{示意图1}
+\end{figure}
+\[
+\begin{aligned}
+h&=(r_2-r_1)\tan(75) \\
+x&=(r_2-r_2)\cos(\theta)\\
+-\tan \theta_1&=\tan\frac{x}{h}=\frac{\tan(75)}{\cos(\theta)}
+\end{aligned}  
+\]
+其中$\theta_1$是我们观测到的角度，$\theta$ 是转动角度。可得
+\[
+\theta=\arccos (\frac{\tan 75}{\tan \theta_1})  
+\]
+\section{能量机关}
+\subsection{时间轴对齐和击打位置预测}
+在之前的
+\end{document}

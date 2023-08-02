@@ -1,6 +1,6 @@
-\documentclass[twocolumn]{ctexart}
+\documentclass{book}
 % ctexart、ctexrep、ctexbook和ctexbeamer, 对应 LaTeX 的article、report、book和beamer
-\usepackage[a4paper,left=3cm,right=3cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=2.6cm,bottom=2.6cm]{geometry} % 设置页面尺寸
 \usepackage{fancyhdr} % 设置页眉页边页脚
 \usepackage{multicol} % 多栏排版
 \usepackage{xeCJK} % 中文支持
@@ -93,8 +93,8 @@
 \newtheorem{example}{例}
 \newtheorem{proposition}{命题}[section]
 
-\title{模电作业}
-\author{2021251124 古翱翔}
+\title{题目}
+\author{作者}
 \date{\today}
 
 \begin{document}
@@ -113,10 +113,17 @@
 \setlength{\parskip}{0em}
 \renewcommand{\baselinestretch}{1.53}
 
-% \section{序}
-% 从电子管(1904)到晶体管(1947)，再到集成电路(1958),再到超规模集成电路(1980)。摩尔定律，18-24。
-\input{./src/1.tex}
-\input{./src/2.tex}
-% \input{./src/作业.tex}
 
+\chapter{能量机关}
+\section{最后位置的判断}
+
+对于静止的来说，直接输出。
+对于小能量机关来说，我们需要预测他的位置，但这里涉及到时间，时间又跟这个位置有关系，我们需要推导出
+一个公式。已知相关公式为
+\begin{align}
+    t&=\frac{e^{kl-1}}{k v_0} \tag{1.1.a}\\
+    \theta&=t_0*thetadot_{use} \tag{1.1.b}
+\end{align}
+又因为\verb|pre_points = to_turn_points(wind_points, theta);|,所以如果我们根据第一次的预测直接算的
+话，是会有误差的。
 \end{document}
